@@ -113,7 +113,7 @@ Here's how the folder structure looks like
 
 Here's the final result:
 
-!Final Result
+
 ![image](https://github.com/user-attachments/assets/07d42e8a-6304-4062-b391-2425fefefa8e)
 
 ```
