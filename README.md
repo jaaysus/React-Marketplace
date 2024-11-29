@@ -58,9 +58,9 @@ const Content = () => {
       <h1 style={styles.title}>Our Products</h1>
       <div style={styles.cardsContainer}>
         {/* Pass the correct image paths to each card */}
-        <Card imageSrc="/ps5.jpg" title="PS5" price="499.99" />
-        <Card imageSrc="/3ds.png" title="3DS" price="199.99" />
-        <Card imageSrc="/seriesX.png" title="Series X" price="499.99" />
+        <Card imageSrc="/ps5.jpg" title="Playstation 5" price="550" />
+        <Card imageSrc="/3ds.png" title="Nintendo 3DS" price="75" />
+        <Card imageSrc="/seriesX.png" title="Xbox Series X" price="450" />
       </div>
     </div>
   );
