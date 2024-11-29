@@ -1,70 +1,116 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Project Overview
 
-## Available Scripts
+This project consists of a simple React application with a header, content section, and footer. Below are the components and their respective code snippets.
 
-In the project directory, you can run:
+## Header Component
 
-### `npm start`
+The `Header` component includes a logo, navigation menu, and buttons for signing in and logging in.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```javascript
+const Header = () => {
+  return (
+    <header style={styles.header}>
+      <div style={styles.logo}>Logo</div>
+      <nav style={styles.menu}>
+        <a href="#" style={styles.link}>Home</a>
+        <a href="#" style={styles.link}>About Us</a>
+        <a href="#" style={styles.link}>Service</a>
+        <a href="#" style={styles.link}>Blog</a>
+      </nav>
+      <div style={styles.buttons}>
+        <button style={{ ...styles.button, ...styles.signIn }}>Sign In</button>
+        <button style={{ ...styles.button, ...styles.logIn }}>Log In</button>
+      </div>
+    </header>
+  );
+};
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Card Component
 
-### `npm test`
+The `Card` component displays a product with an image, title, price, and buttons to add the product to the cart or buy it.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```javascript
+const Card = ({ imageSrc, title, price }) => {
+  return (
+    <div style={styles.card}>
+      <img src={imageSrc} alt={title} style={styles.image} />
+      <h3 style={styles.title}>{title}</h3>
+      <p style={styles.price}>${price}</p>
+      <div style={styles.buttons}>
+        <button style={styles.addToCart}>Add to Cart</button>
+        <button style={styles.buy}>Buy</button>
+      </div>
+    </div>
+  );
+};
+```
 
-### `npm run build`
+## Content Component
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The `Content` component displays a list of products using the `Card` component.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```javascript
+const Content = () => {
+  return (
+    <div style={styles.content}>
+      <h1 style={styles.title}>Our Products</h1>
+      <div style={styles.cardsContainer}>
+        {/* Pass the correct image paths to each card */}
+        <Card imageSrc="/ps5.jpg" title="PS5" price="499.99" />
+        <Card imageSrc="/3ds.png" title="3DS" price="199.99" />
+        <Card imageSrc="/seriesX.png" title="Series X" price="499.99" />
+      </div>
+    </div>
+  );
+};
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Footer Component
 
-### `npm run eject`
+The `Footer` component displays a copyright notice.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```javascript
+const Footer = () => {
+  return (
+    <footer style={styles.footer}>
+      <p style={styles.text}>
+        <i>copyright DEVOPS202 – [Jay Sus AkA Kuro - I mean Issa El kaddaoui] – année 2024/2025</i>
+      </p>
+    </footer>
+  );
+};
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## App Component
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The `App` component combines the `Header`, `Content`, and `Footer` components to form the complete application.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```javascript
+import React from 'react';
+import Header from './components/Header';
+import Content from './components/Content';
+import Footer from './components/Footer';
 
-## Learn More
+const App = () => {
+  return (
+    <div>
+      <Header />
+      <Content />
+      <Footer />
+    </div>
+  );
+};
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+export default App;
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Final Result
 
-### Code Splitting
+Here's the final result:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+!Final Result
+![image](https://github.com/user-attachments/assets/07d42e8a-6304-4062-b391-2425fefefa8e)
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
