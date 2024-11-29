@@ -105,6 +105,9 @@ const App = () => {
 
 export default App;
 ```
+## Folder Structure
+Here's how the folder structure looks like
+![image](https://github.com/user-attachments/assets/d0aaee64-6259-472f-8293-3e9c1bbac196)
 
 ## Final Result
 
